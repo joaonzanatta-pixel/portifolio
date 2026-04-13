@@ -40,12 +40,7 @@ body {
     justify-content: space-between;
     gap: 2rem;
  }
-#imagem-pc{
 
-    width: 120px;
-    padding: 20px;
-    margin-left: 12rem ;
-}
  h1 {
 
     color: var(--cor-primaria);
@@ -111,16 +106,16 @@ h2 {
     margin-top: 30px;
 }
 
-#imagemjc {
 
-width: 350px;
-border-radius: 20px;
-border: 1px solid rgba(139, 155, 206, 0.3);
- box-shadow: 0 0 20px rgba(130, 155, 206, 0.2),
- 0 10px 40px rgba(0,0,0,0.8);
- transition: all 0.4 ease;
-            
+
+#imagemjc {
+    width: 350px;
+    border-radius: 20px;
+    border: 1px solid rgba(139, 155, 206, 0.3);
+    box-shadow: 0 0 20px rgba(130, 155, 206, 0.2), 0 10px 40px rgba(0,0,0,0.8);
+    transition: all 0.4s ease; /* Adicionado o 's' aqui */
 }
+
 
 #imagemjc:hover {
 
