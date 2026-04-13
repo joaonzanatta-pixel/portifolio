@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:ital,wght@0,698;1,698&family=Noto+Sans+Mahajani&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:wght@200;600&family=Roboto+Condensed:ital,wght@1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:ital,wght@0,698;1,698&family=Noto+Sans+Mahajani&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:wght@200;600&family=Roboto+Condensed:ital,wght@1,100..900&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    --cor-primaria:  rgb(139, 155, 206);
+}
+
+body {
+  
+    width: 100%;
+    background: linear-gradient(-45deg, #261546, #060816, #182241, #0a0a0a);
+    animation: color 12s ease-in-out infinite;
+    min-height: 100vh;
+    height: auto;
+
+}
+
+@keyframes color {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+} 
+
+
+#linha-inicial {
+  border: none;
+  height: 2px; /* Uma linha mais fina (2px) parece mais elegante e disfarça o banding */
+  background: #020303; /* Uma cor intermédia entre o preto e o azul do fundo */
+  opacity: 0.8;
+}
+ #container-header {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+ }
+#imagem-pc{
+
+    width: 120px;
+    padding: 20px;
+    margin-left: 12rem ;
+}
+ h1 {
+
+    color: var(--cor-primaria);
+    font-family: "Montserrat", sans-serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    padding: 1rem;
+    margin-left: 17rem;
+ }
+
+ #nav-links {
+
+    display: flex;
+    align-items: center;
+    gap: 12rem;
+    list-style: none;
+    text-decoration: none;
+    margin-left: auto;
+ }
+
+ a {
+
+
+color: var(--cor-primaria);
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+ font-weight: 600;
+text-decoration: none;
+ }
+p {
+
+    color: rgba(240, 248, 255, 0.795);
+    font-weight: 300;
+    
+}
+ 
+li {
+
+    margin-right: 10rem;
+}
+strong {
+    color:rgb(0, 83, 172);
+    font-weight: 800;
+}
+
+h2 {
+
+    color: rgb(0, 83, 172);
+    font-weight: 800;
+    margin-left: 10px;
+    margin-bottom: 20px;
+}
+#container {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3rem 10%;
+    flex-wrap: wrap;
+}
+
+#segundo-paragrafo {
+
+    margin-top: 30px;
+}
+
+#imagemjc {
+
+width: 350px;
+border-radius: 20px;
+border: 1px solid rgba(139, 155, 206, 0.3);
+ box-shadow: 0 0 20px rgba(130, 155, 206, 0.2),
+ 0 10px 40px rgba(0,0,0,0.8);
+ transition: all 0.4 ease;
+            
+}
+
+#imagemjc:hover {
+
+    transform: scale(1.03) translateY(-10px);
+
+    box-shadow: 0 0 30px rgba(139, 155, 206, 0.5),
+    0,20,50px rgba(0,0,0,0.9);
+    border: 1px solid rgba(139,155,206,0.8);
+}
+
+.bloco-texto {
+
+    
+    flex:1;
+    max-width: 600px;
+    margin-right: 3rem;
+}
+
+#carrosel{
+
+    margin: 100px auto;
+    width: 90%;
+   width: 100%;
+    display: flex;
+    overflow-x: auto;
+
+}
+.group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 55px;
+    animation: spin 35s infinite linear;
+   
+
+   
+
+}
+
+#carrosel::-webkit-scrollbar {
+
+    display: none;
+
+}
+.card {
+    flex:0 0 350px;
+    height: 300px;
+    padding: 1em;
+    background: rgba(139, 155, 206, 0.1);
+    font-size: 0.9rem;
+    white-space: normal;
+    font-size: 3rem;
+    border-radius: 2em;
+    text-align: center;
+    align-content: center;
+    padding: 50px;
+    margin-bottom: 20px;
+
+}
+
+@media (max-width: 768px) {
+    #container {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem;
+    }
+    
+    .bloco-texto {
+        margin-right: 0;
+        margin-bottom: 2rem;
+    }
+} 
+
+@keyframes spin {
+
+    from{translate: 0}
+    to{translate: -100%}
+
+}
