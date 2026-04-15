@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Configurações do observador
     const observerOptions = {
         root: null, // usa a janela do navegador
-        threshold: 0.5 // dispara quando 50% da imagem estiver visível
+        threshold: 0.1 // dispara quando 50% da imagem estiver visível
     };
 
     const observer = new IntersectionObserver((entries, observer) => {
@@ -49,4 +49,32 @@ document.addEventListener("DOMContentLoaded", () => {
     if (secaoParaAnimar) {
         observer.observe(secaoParaAnimar);
     }
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    // Selecionamos todos os elementos que devem animar no scroll
+    // Adicionei o #img-pc aqui também por segurança
+    const alvos = document.querySelectorAll(".animar-scroll, #img-pc");
+
+    const observerOptions = {
+        root: null,
+        // Threshold baixo (0.1) garante que funcione em telas pequenas de celular
+        threshold: 0.1 
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Adiciona a classe que dispara o CSS
+                entry.target.classList.add("aparecer");
+                // Uma vez animado, não precisa mais observar
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    // Começa a observar cada alvo encontrado
+    alvos.forEach(alvo => {
+        observer.observe(alvo);
+    });
 });
