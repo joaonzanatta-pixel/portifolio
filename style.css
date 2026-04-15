@@ -48,7 +48,7 @@ body {
     font-size: 2.5rem;
     font-weight: 600;
     padding: 1rem;
-    margin-left: 0;
+    
  }
 
  #nav-links {
@@ -78,7 +78,7 @@ p {
  
 li {
 
-    margin-right: 0rem;
+    margin-right: 30px;
 }
 strong {
     color:rgb(0, 83, 172);
@@ -189,6 +189,7 @@ h2 {
         flex-direction: column; /* Empilha logo e menu */
         gap: 1rem;
         text-align: center;
+        padding: 1.5 5%;
     }
 
     #nav-links {
