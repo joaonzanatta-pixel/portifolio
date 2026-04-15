@@ -73,12 +73,14 @@ p {
 
     color: rgba(240, 248, 255, 0.795);
     font-weight: 300;
+    font-size: 1.3rem;
+
     
 }
  
 
 strong {
-    color:rgb(0, 83, 172);
+    color:rgb(76, 125, 177);
     font-weight: 800;
 }
 
@@ -172,10 +174,13 @@ h2 {
     margin-bottom: 20px;
 
 }
-
+#container-imgtxt {
+    display: flex;
+    
+}
 #img-pc {
 
-    width: 500px;
+    width: 80%;
     margin-left: 185px;
 
     opacity: 0; /*controlar o nível de transparência de um elemento.*/
@@ -190,7 +195,63 @@ h2 {
     transform: translateY(0);
 
 }
+#container-txt {
 
+
+    align-items: center;
+    margin-left: 250px;
+    margin-right: 200px;
+}
+ .titulolista {
+
+    margin-top: 10%;
+     text-align: center;
+     font-weight: 800;
+     font-size: 2.2rem;
+ }
+
+ .paragrafolista { 
+
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 300px;
+    margin-left: 5%;
+    margin-right: 5%;
+    
+ }
+footer {
+
+    background-color: transparent;
+    
+}
+
+footer p {
+
+    margin-top: 15%;
+    margin-bottom: 3%;
+    text-align: center;
+    font-size: 2.2rem;
+  
+}
+
+.animar-scroll #container-txt, 
+.animar-scroll #img-pc {
+    opacity: 0;
+    transform: translateY(100px);
+    transition: all 2s ease-out; /* O tempo de 2s que você pediu */
+}
+
+/* Quando o JS detectar o scroll, ele adiciona 'aparecer' no pai */
+.animar-scroll.aparecer #container-txt,
+.animar-scroll.aparecer #img-pc {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Delay opcional: faz a imagem aparecer um pouquinho depois do texto */
+.animar-scroll.aparecer #img-pc {
+    transition-delay: 0.3s; 
+}
 @keyframes spin {
 
     from{translate: 0}
