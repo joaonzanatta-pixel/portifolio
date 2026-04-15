@@ -26,3 +26,27 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    // Agora selecionamos a seção inteira
+    const secaoParaAnimar = document.querySelector(".animar-scroll");
+
+    const observerOptions = {
+        root: null,
+        threshold: 0.3 // Dispara quando 30% da seção aparecer
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Adiciona a classe no pai, e o CSS faz o resto nos filhos
+                entry.target.classList.add("aparecer");
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    if (secaoParaAnimar) {
+        observer.observe(secaoParaAnimar);
+    }
+});
