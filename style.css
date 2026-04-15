@@ -176,7 +176,23 @@ h2 {
 }
 #container-imgtxt {
     display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 4rem 10%;
+    gap: 50px;
     
+}
+
+.titulolista {
+    margin-top: 40px;
+    color: var(--cor-primaria);
+    font-size: 1.5rem;
+}
+
+.paragrafolista {
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+    line-height: 1.6;
 }
 #img-pc {
 
@@ -237,16 +253,16 @@ footer p {
 .animar-scroll #container-txt, 
 .animar-scroll #img-pc {
     opacity: 0;
-    transform: translateY(100px);
+    transform: translateY(50px);
     transition: all 2s ease-out; /* O tempo de 2s que você pediu */
 }
 
-/* Quando o JS detectar o scroll, ele adiciona 'aparecer' no pai */
 .animar-scroll.aparecer #container-txt,
-.animar-scroll.aparecer #img-pc {
+#img-pc.aparecer {
     opacity: 1;
     transform: translateY(0);
 }
+
 
 /* Delay opcional: faz a imagem aparecer um pouquinho depois do texto */
 .animar-scroll.aparecer #img-pc {
@@ -258,13 +274,13 @@ footer p {
     to{translate: -100%}
 
 }
-
 @media (max-width: 768px) {
+    /* Reseta o header */
     #container-header {
-        flex-direction: column; /* Empilha logo e menu */
+        flex-direction: column;
         gap: 1rem;
         text-align: center;
-        padding: 1.5 5%;
+        padding: 1.5rem 5%;
     }
 
     #nav-links {
@@ -273,35 +289,52 @@ footer p {
         gap: 1.5rem;
     }
 
-    h1 {
-        font-size: 1.8rem;
-    }
-
+    /* Inverte a primeira seção (Foto de Perfil) */
     #container {
-        flex-direction: column-reverse; /* Foto em cima, texto embaixo (opcional) */
+        flex-direction: column-reverse; 
         text-align: center;
         padding: 2rem 5%;
     }
 
-    .bloco-texto {
-        margin-right: 0;
-        margin-top: 2rem;
+    /* INVERSÃO DA SEGUNDA SEÇÃO (PC e TEXTO) */
+   #container-imgtxt {
+        display: flex;
+        flex-direction: column; /* Segue a ordem natural: imagem -> texto */
+        align-items: center;
     }
 
-    #imagemjc {
-        width: 80%; /* Imagem cresce conforme a tela */
+    /* RESET DAS MARGENS DO DESKTOP */
+    #container-txt {
+        margin-left: 0;   /* Mata os 250px do desktop */
+        margin-right: 0;  /* Mata os 200px do desktop */
+        margin-top: 2rem;
+        width: 100%;
+        text-align: center;
+    }
+
+    #img-pc {
+        width: 90%;
         max-width: 300px;
+        margin-left: 0;   /* Mata os 185px do desktop */
+        margin-right: 0;  /* Garante centralização */
+        margin-bottom: 20px;
+        display: block;
+    }
+
+    /* Ajuste fino dos textos para não estourarem */
+    .titulolista {
+        font-size: 1.8rem;
+        margin-top: 30px;
+    }
+
+    .paragrafolista {
+        font-size: 1.2rem;
+        margin-left: 0;
+        margin-right: 0;
     }
 
     .card {
-        flex: 0 0 200px; /* Cards menores no celular */
+        flex: 0 0 200px;
         height: 200px;
-        font-size: 1.2rem;
-    }
-    
-    #img-pc {
-        width: 80%;
-        margin-left: 0;
-        margin: 20px auto;
     }
 }
