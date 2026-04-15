@@ -173,6 +173,23 @@ h2 {
 
 }
 
+#img-pc {
+
+    width: 500px;
+    margin-left: 185px;
+
+    opacity: 0; /*controlar o nível de transparência de um elemento.*/
+    transform: translateY(50px);
+    transition: all 1s ease-out;
+}
+
+
+#img-pc.aparecer {
+
+    opacity: 1;
+    transform: translateY(0);
+
+}
 
 @keyframes spin {
 
@@ -219,5 +236,11 @@ h2 {
         flex: 0 0 200px; /* Cards menores no celular */
         height: 200px;
         font-size: 1.2rem;
+    }
+    
+    #img-pc {
+        width: 80%;
+        margin-left: 0;
+        margin: 20px auto;
     }
 }
