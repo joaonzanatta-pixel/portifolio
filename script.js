@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Configurações do observador
     const observerOptions = {
         root: null, // usa a janela do navegador
-        threshold: 0.2 // dispara quando 20% da imagem estiver visível
+        threshold: 0.5 // dispara quando 50% da imagem estiver visível
     };
 
     const observer = new IntersectionObserver((entries, observer) => {
@@ -23,5 +23,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // Começa a observar a imagem
     if (imagemPc) {
         observer.observe(imagemPc);
-    }
+    };
+
 });
